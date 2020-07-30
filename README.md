@@ -1,4 +1,4 @@
-# Simple-WebCrawler
+# TweetAnalyzer
 This is a simple Twitter Tweets Analyzer, which takes a Handler as an input and will provide below details in a detailed easy readable format.
 
 ***1. Most Recent Tweets <br />
