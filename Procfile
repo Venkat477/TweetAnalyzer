@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run simpleWebCrawler.py
+web: sh setup.sh && streamlit run extractTweets.py
