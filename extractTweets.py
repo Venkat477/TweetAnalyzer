@@ -5,14 +5,12 @@ Created on Wed Jul 28 18:20:31 2020
 """
 from PIL import Image
 import plotly.express as px
-from kneed import KneeLocator
 from textblob import TextBlob
 from nltk import word_tokenize
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 from nltk.corpus import stopwords
 from tweepy import API,OAuthHandler
-from sklearn.feature_extraction.text import TfidfVectorizer
 import preprocessor as p,re,string,sys,pandas as pd,streamlit as st
 
 pd.set_option('display.max_colwidth', None)
