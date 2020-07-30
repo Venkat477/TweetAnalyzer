@@ -95,7 +95,7 @@ def getTweets(hashtag):
     except Exception as e:
         print ('Error on line {}'.format(sys.exc_info()[-1].tb_lineno),Exception, e)
 
-def kmeansProcessing(tweet_df):
+"""def kmeansProcessing(tweet_df):
     tweetsData = tweet_df['cleanedTweet'].values
     print(len(tweetsData),tweetsData[0:5])
     vectorizer = TfidfVectorizer()
@@ -131,7 +131,7 @@ def kmeansProcessing(tweet_df):
     plt.show()
 
     
-    """kmeans = KMeans(n_clusters = 4, n_init = 20, n_jobs = 1) # n_init(number of iterations for clsutering) n_jobs(number of cpu cores to use)
+    kmeans = KMeans(n_clusters = 4, n_init = 20, n_jobs = 1) # n_init(number of iterations for clsutering) n_jobs(number of cpu cores to use)
     kmeans.fit(X)
     y_kmeans = kmeans.predict(X)
     print('--->',X[:, 0])
