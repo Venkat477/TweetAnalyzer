@@ -11,7 +11,8 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 from nltk.corpus import stopwords
 from tweepy import API,OAuthHandler
-import preprocessor as p,re,string,sys,pandas as pd,streamlit as st
+from preprocessor.api import clean
+import re,string,sys,pandas as pd,streamlit as st
 
 pd.set_option('display.max_colwidth', None)
 
@@ -77,8 +78,8 @@ def getTweets(hashtag):
             result['screen_name'],result['location'],result['about'] = post.user.screen_name,post.user.location,post.user.description
             result['followers'],result['following'] = post.user.followers_count,post.user.friends_count
             result['retweetCount'],result['likeCount'] = post.retweet_count,post.favorite_count
-            result['cleanedTweet'] = clean_tweets(p.clean(post.full_text))
-            result['processedTweet'] = p.clean(post.full_text)
+            result['cleanedTweet'] = clean_tweets(clean(post.full_text))
+            result['processedTweet'] = clean(post.full_text)
             
             blob = TextBlob(result['cleanedTweet'])
             Sentiment = blob.sentiment     
