@@ -18,7 +18,7 @@ I tried to include all the possible cases to extract the above information, but 
 ***1. Used Regex Patterns for removing all the unwanted characters and to clean the tweets. <br />
 2. Used Stop Words from NLTK module to remove stopwords from the Tweets. <br />
 3. Used Pandas to process and query Tweets. <br />
-4. Used Plotly to display Charts. <br />
+4. Used Plotly and matplotlib to display Charts and Graphs. <br />
 5. Used Python Tweepy Package to extract Tweets from Twitter***
 
 
