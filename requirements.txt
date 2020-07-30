@@ -7,4 +7,4 @@ textblob
 matplotlib
 wordcloud
 tweepy
-preprocessor
+tweet-preprocessor
