@@ -17,10 +17,10 @@ import re,string,sys,pandas as pd,streamlit as st
 pd.set_option('display.max_colwidth', None)
 
 #Twitter credentials for the app
-consumer_key = 'kLb14rz8xHzGk9dpDj74UYwyZ'
-consumer_secret = 'pu0o297R5zfUuWLbDHJ9IhjWP2E3M4p37YV71R8HgO6brgSCg5'
-access_key= '186022911-yzD5on74EKkWA2Ac5IcJ3ocfdkJqJQjoKvdwOn0B'
-access_secret = '7p1MYRWQvRivB30xTcfXYsPddZINzKTX0kl6iT5SY3spJ'
+consumer_key = '**************************'
+consumer_secret = '*******************************'
+access_key= '***************************'
+access_secret = '***************************'
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_key, access_secret)
