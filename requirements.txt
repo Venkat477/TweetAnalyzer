@@ -1,0 +1,7 @@
+nltk
+streamlit
+urllib3
+bs4
+HTMLParser
+unicodedata2
+pandas
