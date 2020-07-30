@@ -81,7 +81,7 @@ def getTweets(hashtag):
             result['cleanedTweet'] = clean_tweets(clean(post.full_text))
             result['processedTweet'] = clean(post.full_text)
             
-            blob = TextBlob(result['cleanedTweet'])
+            blob = TextBlob(str(result['cleanedTweet']))
             Sentiment = blob.sentiment     
             polarity,subjectivity = Sentiment.polarity,Sentiment.subjectivity
             sentimentClass = 'Negative' if polarity < 0 else 'Positive' if polarity > 0 else 'Neutral'
