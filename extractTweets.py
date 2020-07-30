@@ -58,8 +58,6 @@ def getMostRecentTweets(hashtag,tweetCount):
         for post in posts:
             result = {}
             result['created_at'],result['Tweet'],result['user'] = str(post.created_at),post.full_text,post.user.name
-            #result['screen_name'],result['location'],result['about'] = post.user.screen_name,post.user.location,post.user.description
-            #result['followers'],result['following'] = post.user.followers_count,post.user.friends_count
             result['retweetCount'],result['likeCount'] = post.retweet_count,post.favorite_count
             
             tweetData.append(result)
@@ -94,53 +92,6 @@ def getTweets(hashtag):
         return tweet_df
     except Exception as e:
         print ('Error on line {}'.format(sys.exc_info()[-1].tb_lineno),Exception, e)
-
-"""def kmeansProcessing(tweet_df):
-    tweetsData = tweet_df['cleanedTweet'].values
-    print(len(tweetsData),tweetsData[0:5])
-    vectorizer = TfidfVectorizer()
-    X = vectorizer.fit_transform(tweetsData)
-    word_features = vectorizer.get_feature_names()
-    print(len(word_features))
-    print(X.A[:,0])
-    print(X.A[:,1])
-    print(type(X))  
-    
-    from sklearn.cluster import KMeans
-    wcss = []
-    for i in range(1,11):
-        kmeans = KMeans(n_clusters=i,init='k-means++',max_iter=300,n_init=10,random_state=0)
-        kmeans.fit(X)
-        wcss.append(kmeans.inertia_)
-        
-    print(wcss)
-    plt.plot(range(1,11),wcss)
-    plt.title('The Elbow Method')
-    plt.xlabel('Number of clusters')
-    plt.ylabel('WCSS')
-    plt.savefig('elbow.png')
-    #plt.show()
-    kl = KneeLocator([0,1,2,3,4,5,6,7,8,9], wcss, S=1.0, curve="convex", direction="decreasing")
-    print('###',kl.elbow)
-    
-    kmeans = KMeans(n_clusters=5,init='k-means++',max_iter=300,n_init=10,random_state=0)
-    #pred_y = kmeans.fit_predict(X)
-    plt.scatter(X.A[:,0], X.A[:,1])
-    plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s=300, c='red')
-    plt.savefig('kmeans.png')
-    plt.show()
-
-    
-    kmeans = KMeans(n_clusters = 4, n_init = 20, n_jobs = 1) # n_init(number of iterations for clsutering) n_jobs(number of cpu cores to use)
-    kmeans.fit(X)
-    y_kmeans = kmeans.predict(X)
-    print('--->',X[:, 0])
-    plt.scatter(X[:, 0], X[:, 1],c = y_kmeans, s=50, cmap = 'viridis')
-    
-    common_words = kmeans.cluster_centers_.argsort()[:,-1:-26:-1]
-    for num, centroid in enumerate(common_words):
-        print(str(num) + ' : ' + ', '.join(word_features[word] for word in centroid))
-    """
         
 def selectOptions():
     try:
