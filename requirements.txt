@@ -1,7 +1,10 @@
 nltk
 streamlit
-urllib3
-bs4
-HTMLParser
-unicodedata2
 pandas
+PIL
+plotly
+textblob
+matplotlib
+wordcloud
+tweepy
+preprocessor
